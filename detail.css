@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    margin:0;
+    width:100vw;
+}
+.container-1{
+width:100%;
+min-height:500px;
+display:flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.poster{
+    width:20%;
+    margin-right:20px;
+    margin-top:15px;
+    min-width:250px;
+}
+.desc{
+    margin-top:15px;
+    width:50%;
+    min-width:350px;
+}
+.title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 2rem;
+    margin-bottom: 10px;
+}
+.posterimg{
+    width:250px;
+    height:400px;
+}
+.similarmovie{
+    width:27%;
+    height:320px;
+    margin:auto 0;
+    display:flex;
+    flex-wrap:wrap;
+    overflow:auto;
+    min-width: 367px;
+}
+.similardiv{
+position:relative;
+height:45%;
+margin:0 10px;
+}
+.link{
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.similarimg{
+    height:100%;
+    width:96px;
+    transition: all 0.2s linear;
+}
+.similardiv:hover .similarimg{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.genre{
+    display:flex;
+}
+.genrediv{
+  margin:8px 5px;
+  background-color: darkgray;
+  padding:5px 8px;
+  border-radius: 2rem;
+}
+.releasedate{
+  margin:5px 5px;
+  font-size:25px;
+}
+.rating{
+    margin-top:70px;
+    font-size:20px;
+}
+.subcontainer{
+    margin-left:5px;
+    height:64%;
+}
+.productionhead{
+    margin-top:20px;
+    font-weight: 500;
+    font-size:18px;
+}
+.production{
+    display:flex;
+    flex-wrap: wrap;
+    margin:30px 0 0 0; 
+    width:100%;
+}
+
+.productiondiv{
+    margin:0 10px;
+    
+    width:45px;
+    height:45px;
+}
+.productiondiv:nth-child(1){
+    margin-left:0;
+}
+.productiondiv img{
+    width:100%;
+    height:100%;
+}
+.container-2{
+    max-width:90vw;
+    margin:0 auto;
+    height:220px;
+    display:flex;
+    justify-content: normal;
+    overflow:auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.container-2::-webkit-scrollbar{
+    display:none;
+}
+
+.contwrapper{
+    position:relative;
+    max-width: 90vw;
+margin: 0 auto;
+}
+.container-2>div{
+    margin:0 5px 0 5px; 
+    
+}
+
+.container-2>div:nth-child(3){
+    margin-left:auto;
+}
+
+.container-2>div:last-child{
+    margin-right:auto;
+}
+
+.iframe{
+    border:0;
+    
+
+}
+.button{
+position:absolute;
+right:0px;
+height:91%;
+width:30px;
+padding:0;
+outline:0;
+display:none;
+cursor:pointer;
+border-radius:10px 0 0 10px;
+border:none;
+background-color:rgb(43, 43, 43);
+color:white;
+font-weight:700;
+font-size: 25px;
+}
+.button2{
+position:absolute;
+left:0px;
+height:91%;
+width:30px;
+padding:0;
+background-color:black;
+color:white;
+font-weight:700;
+font-size: 25px;
+display:none;
+cursor:pointer;
+border-radius:0px 10px 10px 0px;
+border:none;
+outline:0;
+}
+.button:hover{
+    border-left:1px solid white;
+
+}
+.button2:hover{
+    border-right:1px solid white;
+}
+.container-3{
+display:flex;
+justify-content: space-between;
+width:95%;
+margin:40px auto;
+/*max-height:800px;*/
+overflow:auto;
+flex-wrap: wrap;
+
+}
+.overviewcont{
+    width:66%;
+    min-width: 427px;
+}
+.overview,.review{
+    width:100%;
+    font-weight: 400;
+}
+.overviewheader{
+    margin-bottom:20px;
+    font-size:23px;
+    font-weight:500;
+}
+.review{
+    text-align: justify;
+}
+
+.castwrapper,.castdiv{
+display:flex;
+width:30%;
+flex-wrap:wrap;
+height:625px;
+overflow:auto;
+min-width:370px;
+scrollbar-width: none;
+scrollbar-color:  rgb(213, 213, 213)rgb(243, 243, 243);
+margin-top:10px;
+}
+.castdiv:hover{
+scrollbar-width: thin;
+
+}
+.cast{
+    height:65px;
+    width:100%;
+    display:flex;
+    margin-bottom: 10px;
+    border-radius:10px;
+    border-bottom:1px solid rgb(235, 235, 235);
+}
+.cast:hover{
+    background-color:rgb(242, 242, 242);
+
+}
+.castname{
+    font-weight: 400;
+}
+.castname .character{
+    font-weight: 300;
+}
+.casting{
+height:65px;
+border-radius: 20%;
+margin-right: 10px;
+}
+.avatar{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:4px solid rgb(235, 235, 235);
+}
+.review{
+max-height:500px;
+margin-top:20px;
+overflow:auto;
+scrollbar-width: thin;
+scrollbar-color:  rgb(213, 213, 213)rgb(243, 243, 243);
+
+}
+.reviewpack{
+   
+    width:95%;
+    margin-bottom: 20px;
+  
+}
+.reviewpack .image{
+    display:flex; 
+    align-items: center; 
+    font-weight: 400; 
+}
+.reviewpack .revcontent{
+padding:0 10px 0 20px;
+max-height:200px;
+overflow:auto;
+margin-top:10px;
+font-weight: 300;
+font-size: 14px;
+scrollbar-width: thin;
+scrollbar-color:  rgb(213, 213, 213)rgb(243, 243, 243);
+}
+.reviewheader{
+    margin-top: 30px;
+
+}
+.customborder{
+    background-color: rgb(235, 235, 235);
+    height:2px;
+    position:relative;
+    left:20px;
+    width:97.5%;
+    top:-4px;
+}
+
+
+
+
+/*webkit scrollbar for whole review*/
+.reviewwrapper:hover .review::-webkit-scrollbar{
+    visibility:visible;
+    width:5px;
+    background-color:rgb(235, 235, 235);
+}
+.review::-webkit-scrollbar{
+    visibility:hidden;
+    width:5px;
+    background-color:rgb(235, 235, 235);
+}
+.reviewwrapper:hover .review::-webkit-scrollbar-thumb{
+    background-color: rgb(213, 213, 213);
+      
+}
+/*webkit scrollbar for each review*/
+
+.reviewpack:hover .revcontent::-webkit-scrollbar{
+    visibility:visible;
+    width:3px;
+    background-color:rgb(235, 235, 235);
+}
+.revcontent::-webkit-scrollbar{
+    visibility:hidden;
+    width:3px;
+    background-color:rgb(235, 235, 235);
+}
+.reviewpack:hover .revcontent::-webkit-scrollbar-thumb{
+    background-color: rgb(213, 213, 213);
+      
+}
+
+
+/*webkit scrollbar for cast*/
+.castdiv::-webkit-scrollbar{
+ 
+    width:5px;
+    background-color:rgb(235, 235, 235);
+}
+
+.castdiv::-webkit-scrollbar-thumb{
+    background-color: rgb(213, 213, 213);
+      
+}
+
+.container-4{
+
+}
+/*media query*/
+@media only screen and  (max-width:1148px){
+   .castdiv{
+       width:100vw;
+       margin-top:10px;
+   }
+   .castwrapper{
+       margin-top:40px;
+   }
+   .overviewcont{
+       width:99vw;
+   }
+   .overview{
+       width:95vw;
+   }
+   .similarmovie{
+       margin:40px 0;
+   }
+}
+@media only screen and  (max-width:420px){
+
+.revcontent{
+    display:none;
+}
+}
