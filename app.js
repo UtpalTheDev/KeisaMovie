@@ -10,9 +10,11 @@ var main=document.querySelector(".main");
 var pageblock=document.querySelector(".pagination");
 var prev=document.querySelector(".prevbtn");
 var next=document.querySelector(".nextbtn");
-
+var currentpage=0;
+var totalpage="";
+var btnurl="";
 prev.addEventListener('click',previous);
-//next.addEventListener('click',nextone);
+next.addEventListener('click',nextone);
 
 form.addEventListener('submit',onsubmit);
 
@@ -33,22 +35,26 @@ function onsubmit(event){
 
 }
 function call(url,val){
+    btnurl=url;
     fetch(url+val)
     .then(response=>response.json())
     .then(json=>{
         data(json.results);
         console.log("kk");
-        var currentpage=json.page;
-        var totalpage=json.total_pages;
-        var prevval=currentpage-1;
+        currentpage=json.page;
+        totalpage=json.total_pages;
+       /* var prevval=currentpage-1;
         var nextval=currentpage+1;
         if(currentpage>1){
             next.removeEventListener('click',function(){call(url,nextval)});
+            console.log("ll");
+
         prev.removeEventListener('click',function(){call(url,prevval)})
         }
         next.addEventListener('click',function(){call(url,nextval)});
+        next.removeEventListener('click',function(){call(url,nextval)});
         prev.addEventListener('click',function(){call(url,prevval)});
-       // pagination(json.page,json.total_pages);
+       // pagination(json.page,json.total_pages);*/
     })
 }
 function data(Data){
@@ -75,14 +81,14 @@ function data(Data){
 }
 
 function nextone(){
-    onsumbit()
+    call(btnurl,currentpage+1);
 
 }
 function previous(){
 
 }
 
-function pagination(currentpage,totalpage){
+function pagination(){
     if(currentpage<=totalpage&&currentpage>=1){
         //var next=cuurentpage+1;
         var prev=currentpage-1;
