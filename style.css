@@ -13,10 +13,11 @@ nav{
 .searchwrapper{
     display:flex;
     justify-content:flex-end;
+    align-items:center ;
 }
 .search{
     width:150px;
-    height:20px;
+    height:18px;
     border-radius: 15px;
     border:none;
     outline:none;
@@ -84,4 +85,37 @@ main{
     position:absolute;
     width:100%;
     height:100%;
+}
+
+.pagination{
+
+    width:170px;
+    margin:10px auto;
+    display:flex;
+    justify-content: space-between;
+    
+}
+.pagination>button{
+    border:none;
+    width:75px;
+    height:30px;
+    background-color: black;
+    color:white;
+    cursor:pointer;
+}
+.homebtn{
+    background-color: black;
+    color:white;
+    padding:5px;
+    box-sizing: border-box;
+    height:30px;
+    margin-right:20px;
+    border-radius:10px;
+    cursor:pointer;
+    border:1px solid black;
+    transition:border 0.5s;
+}
+.homebtn:hover{
+    border:1px solid white;
+    
 }

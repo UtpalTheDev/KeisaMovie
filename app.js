@@ -10,9 +10,12 @@ var main=document.querySelector(".main");
 var pageblock=document.querySelector(".pagination");
 var prev=document.querySelector(".prevbtn");
 var next=document.querySelector(".nextbtn");
-var currentpage=0;
+var home=document.querySelector(".homebtn");
+var currentpage=1;
 var totalpage="";
 var btnurl="";
+prev.style.color=`gray`;
+home.addEventListener('click',homeclick);
 prev.addEventListener('click',previous);
 next.addEventListener('click',nextone);
 
@@ -20,13 +23,16 @@ form.addEventListener('submit',onsubmit);
 
 call(Api_Url,1);
 
-
+function homeclick(){
+    call(btnurl,1);
+   prev.style.disabled=true;
+}
 function onsubmit(event){
     event.preventDefault();
-    var searchvalue=search.value;
+    var searchvalue=search.value+"&page=";
 
     if(searchvalue!==''){
-        call(search_url+searchvalue);
+        call(search_url+searchvalue,1);
         search.value='';
     }
 
@@ -40,7 +46,7 @@ function call(url,val){
     .then(response=>response.json())
     .then(json=>{
         data(json.results);
-        console.log("kk");
+        //console.log("kk");
         currentpage=json.page;
         totalpage=json.total_pages;
        /* var prevval=currentpage-1;
@@ -81,17 +87,48 @@ function data(Data){
 }
 
 function nextone(){
+    if(currentpage>=1){
+        prev.disabled=false;
+        prev.style.color=`white`;
+        
+    }
+    if(currentpage===totalpage-1){
+       
     call(btnurl,currentpage+1);
+    next.disabled=true;
+    next.style.color=`gray`;
+    return;
+    }
+    if(currentpage<totalpage){
+        next.disabled=false;
+        call(btnurl,currentpage+1);
+
+    }
 
 }
 function previous(){
+    if(currentpage>1){
+        call(btnurl,currentpage-1);
+        prev.disabled=false;
+        next.disabled=false;
+        next.style.color=`white`;
 
+    }
+    if(currentpage<=2){
+        call(btnurl,currentpage-1);
+        prev.disabled=true;
+        prev.style.color=`gray`;
+
+
+    }
+    
+  
 }
 
-function pagination(){
+/*function pagination(){
     if(currentpage<=totalpage&&currentpage>=1){
         //var next=cuurentpage+1;
         var prev=currentpage-1;
        
     }
-}
+}*/
