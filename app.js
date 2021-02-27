@@ -69,6 +69,7 @@ function data(Data){
        var{title,poster_path,vote_average,id} =item;
        var moviediv=document.createElement('div');//change to const
        moviediv.classList.add('moviewrapper');
+      
        if(poster_path!==null){
            
        
